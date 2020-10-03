@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myday/calendar.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,14 +16,7 @@ class MyApp extends StatelessWidget {
           accentColor: Color(0xFFe76f51),
           canvasColor: Color(0xFFe5e5e5),
           fontFamily: 'Montserrat'),
-      home: Scaffold(
-        body: Center(
-          child: Text(
-            "Set the Theme Data",
-            style: TextStyle(fontSize: 25),
-          ),
-        ),
-      ),
+      home: MyHomePage(key),
     );
   }
 }
