@@ -8,7 +8,7 @@ This is a public repo and anyone can use this for study purposes
 This project is currently in a POC
 
 Future plans
-- Implement using Clean architecture)
+- Implement using Clean architecture
 - Add features like Cloud Storage Sync
 
 For help getting started with Flutter, view our

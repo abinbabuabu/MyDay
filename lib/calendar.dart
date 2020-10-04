@@ -7,24 +7,15 @@ import 'package:intl/intl.dart' show DateFormat;
 class MyHomePage extends StatefulWidget {
   MyHomePage(Key key) : super(key: key);
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   @override
   _MyHomePageState createState() => new _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  DateTime _currentDate = DateTime(2019, 2, 3);
-  DateTime _currentDate2 = DateTime(2019, 2, 3);
-  String _currentMonth = DateFormat.yMMM().format(DateTime(2019, 2, 3));
-  DateTime _targetDateTime = DateTime(2019, 2, 3);
+  DateTime _currentDate = DateTime.now();
+  DateTime _currentDate2 = DateTime.now();
+  String _currentMonth = DateFormat.yMMM().format(DateTime.now());
+  DateTime _targetDateTime = DateTime(2030);
 
 //  List<DateTime> _markedDate = [DateTime(2018, 9, 20), DateTime(2018, 10, 11)];
   static Widget _eventIcon = new Container(
@@ -117,10 +108,12 @@ class _MyHomePageState extends State<MyHomePage> {
       },
       showOnlyCurrentMonthDate: false,
       weekendTextStyle: TextStyle(
-        color: Colors.red,
+        color: Colors.grey,
       ),
       thisMonthDayBorderColor: Colors.grey,
+      weekdayTextStyle: TextStyle(color: Colors.grey),
       weekFormat: false,
+      weekDayFormat: WeekdayFormat.narrow ,
 //      firstDayOfWeek: 4,
       markedDatesMap: _markedDateMap,
       height: 420.0,
@@ -129,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
       customGridViewPhysics: NeverScrollableScrollPhysics(),
 
       markedDateCustomTextStyle: TextStyle(
-        fontSize: 18,
+        fontSize: 22,
         color: Colors.blue,
       ),
       showHeader: false,
@@ -143,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // },
       // markedDateMoreShowTotal:
       //     true,
-      todayButtonColor: Colors.yellow,
+      todayButtonColor: Colors.grey,
 
       minSelectedDate: _currentDate.subtract(Duration(days: 360)),
       maxSelectedDate: _currentDate.add(Duration(days: 360)),
@@ -169,7 +162,6 @@ class _MyHomePageState extends State<MyHomePage> {
     return new Scaffold(
         body: SingleChildScrollView(
           child: Container(
-            color: Colors.red,
             alignment: Alignment.bottomRight,
             margin: EdgeInsets.only(top: 40,left: 16),
             child: Column(

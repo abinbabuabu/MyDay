@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myday/calendar.dart';
+import 'package:myday/recorder.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
           accentColor: Color(0xFFe76f51),
           canvasColor: Color(0xFFe5e5e5),
           fontFamily: 'Montserrat'),
-      home: MyHomePage(key),
+      home: MyRecorder(),
     );
   }
 }
